@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :comments
   get 'pages/contacts'
 
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
   get 'pages/contacts'
 
 
+  resource :user, only: [:edit, :update]
+  
   root :to => redirect('/ideas')
 
   resources :ideas

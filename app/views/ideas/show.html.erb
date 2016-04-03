@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <div class="row">
   <div class="col-md-9">
@@ -18,7 +18,7 @@
 <h3>Comments</h3>
 <% @comments.each do |comment| %>
   <div>
-    <strong><%= comment.user_name %></strong>
+    <strong><%= comment.user.try(:user_name) %></strong>
     <br />
     <p><%= comment.body %></p>
     <p> <%= image_tag(comment.picture_url(:thumbcom)) if comment.picture.present? %></p>
