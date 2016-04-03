@@ -16,7 +16,7 @@
 </p>
 <p>
   <strong>Picture:</strong>
-  <%= image_tag(comment.picture_url, :width => 600) if comment.picture.present? %>
+  <%= image_tag(@comment.picture_url, :width => 600) if @comment.picture.present? %>
 </p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
